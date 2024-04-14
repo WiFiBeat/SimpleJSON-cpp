@@ -5,5 +5,8 @@ project(simplejson-cpp
         HOMEPAGE_URL "https://github.com/WiFiBeat/simplejson-cpp"
         LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_library(simplejson-cpp INTERFACE)
 target_include_directories(simplejson-cpp INTERFACE .)
