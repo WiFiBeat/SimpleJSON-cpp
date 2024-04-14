@@ -110,7 +110,7 @@ namespace simplejson {
 			if (textLen < 0) {
 				textLen = strlen(text);
 			}
-			this->_string = (char *)calloc(1, key.size() + textLen + ((addDoubleQuotes) ? 4 : 2) + 1 + 1);
+			this->_string = static_cast<char *>(calloc(1, key.size() + textLen + ((addDoubleQuotes) ? 4 : 2) + 1 + 1));
 			this->_string[0] = '"';
 			// flawfinder: ignore
 			memcpy(this->_string + 1, key.c_str(), key.size());
@@ -278,7 +278,7 @@ namespace simplejson {
 
 				// Copy string
 				string temp = ss.str();
-				this->_string = (char *)calloc(1, temp.size() + 1);
+				this->_string = static_cast<char *>(calloc(1, temp.size() + 1));
 				if (this->_string == NULL) {
 					throw string("Failed allocating memory to generate JSON document");
 				}
