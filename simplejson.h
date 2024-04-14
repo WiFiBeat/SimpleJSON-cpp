@@ -210,7 +210,7 @@ namespace simplejson {
 			}
 		}
 
-		JSONObject(const string & key) : _isDocument(false), _string(NULL), _nullValue(true)
+		explicit JSONObject(const string & key) : _isDocument(false), _string(NULL), _nullValue(true)
 		{
 			if (key.empty()) {
 				throw string("Empty key");
